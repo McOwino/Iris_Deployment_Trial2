@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Species Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: White;
+        }
+
+        h1 {
+            text-align: center;
+            color: Green;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h4 {
+            text-align: center;
+            margin-top: 20px;
+            color: #4caf50;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Iris Species Prediction</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="SepalLengthCm" placeholder="Sepal Length(Cm)" required="required" /><br>
+        <input type="text" name="SepalWidthCm" placeholder="Sepal Width(Cm)" required="required" /><br>
+        <input type="text" name="PetalLengthCm" placeholder="Petal Length(Cm)" required="required" /><br>
+        <input type="text" name="PetalWidthCm" placeholder="Petal Width(Cm)" required="required" /><br>
+        <button type="submit">Predict this Iris Species</button>
+    </form>
+    <h4>{{ prediction_text }}</h4>
+</body>
+
+</html>
+
